@@ -16,3 +16,6 @@
 [submodule "nova-calendar"]
 	path = nova-calendar
 	url = https://github.com/tuniveza/nova-calendar.git
+[submodule "nova-index"]
+	path = nova-index
+	url = https://github.com/tuniveza/nova-index.git

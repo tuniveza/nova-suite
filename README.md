@@ -89,6 +89,11 @@ The studio's chat assistant and bookings, the staff and members' apps, and a set
 </tr>
 </table>
 
+### ✦ [Nova Index](https://github.com/tuniveza/nova-index)
+**Everything the suite remembers, in one place.** One shared memory for every Nova app: conversations go in, small files of one-line facts come out (studio, staff and customer), and each app reads back only what a turn needs. Browse it, watch it grow, edit a line, and approve what's learned about customers.
+
+`Cloudflare Workers` `D1` `Claude` `PWA`
+
 ## How it fits together
 
 ```mermaid
@@ -101,6 +106,9 @@ flowchart TB
   bot <-->|times · bookings · alerts| acuity
   bot -->|alerts · staff chat| hub["Nova Hub<br/>staff phone app (served by Nova Bot)"]
   bot -->|busy times| club["✦ Nova Club<br/>members' Android app"]
+  bot <-->|memory: facts in, context out| index["✦ Nova Index<br/>the suite's shared memory"]
+  agent <-->|memory| index
+  hub -->|browse · edit · approve| index
   subgraph tools["Standalone tools"]
     task["✦ Nova Calendar"]
     notes["✦ Nova Notes"]
@@ -132,6 +140,7 @@ git submodule update --remote --merge
 | `nova-calendar/` | [tuniveza/nova-calendar](https://github.com/tuniveza/nova-calendar) | Cosmic calendar (PWA) | [use it online](https://nova-calendar.novacane-studio.workers.dev) or open `index.html` |
 | `nova-notes/` | [tuniveza/nova-notes](https://github.com/tuniveza/nova-notes) | Note editor (PWA) | [use it online](https://nova-notes.novacane-studio.workers.dev) or `python3 -m http.server` |
 | `nova-observatory/` | [tuniveza/nova-observatory](https://github.com/tuniveza/nova-observatory) | Project dashboard | `npm install && npm run scan` |
+| `nova-index/` | [tuniveza/nova-index](https://github.com/tuniveza/nova-index) | The suite's shared memory (browse, edit, approve) | [use it](https://novacane-worker.novacane-studio.workers.dev/app/memory/) (Nova Hub sign-in) |
 
 Every repo has its own README with screenshots, a demo and set-up notes.
 
