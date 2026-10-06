@@ -1,0 +1,18 @@
+[submodule "nova-bot"]
+	path = nova-bot
+	url = https://github.com/tuniveza/nova-bot.git
+[submodule "nova-agent"]
+	path = nova-agent
+	url = https://github.com/tuniveza/nova-agent.git
+[submodule "nova-club"]
+	path = nova-club
+	url = https://github.com/tuniveza/nova-club.git
+[submodule "nova-task"]
+	path = nova-task
+	url = https://github.com/tuniveza/nova-task.git
+[submodule "nova-notes"]
+	path = nova-notes
+	url = https://github.com/tuniveza/nova-notes.git
+[submodule "nova-observatory"]
+	path = nova-observatory
+	url = https://github.com/tuniveza/nova-observatory.git
