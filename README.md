@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/banner.jpg" alt="Nova Suite: Novacane Studios. Nova Bot, Nova Agent, Nova Club, Nova Task, Nova Notes, Nova Observatory" width="100%">
+<img src="docs/banner.jpg" alt="Nova Suite: Novacane Studios. Nova Bot, Nova Agent, Nova Club, Nova Calendar, Nova Notes, Nova Observatory" width="100%">
 
 **Everything that runs Novacane Studios, plus the little universe of tools around it.**<br>
 The studio's chat assistant and bookings, the staff and members' apps, and a set of cosmic tools, in one home.
@@ -66,12 +66,14 @@ The studio's chat assistant and bookings, the staff and members' apps, and a set
 <tr>
 <td width="50%" valign="top">
 
-### ✦ [Nova Task](https://github.com/tuniveza/nova-task)
-**A cosmic calendar.** Note cards and day cards under the real sky (moon phases, seasons, meteor showers), with a generated space picture for every note.
+### ✦ [Nova Calendar](https://github.com/tuniveza/nova-calendar)
+**A cosmic calendar.** Note cards and day cards under the real sky (moon phases, seasons, meteor showers), with a generated space picture for every note. Installable and works offline.
 
-`Vanilla JS` `Canvas` `Meeus astronomy`
+`PWA` `Vanilla JS` `Canvas` `Meeus astronomy`
 
-<a href="https://github.com/tuniveza/nova-task"><img src="https://raw.githubusercontent.com/tuniveza/nova-task/main/docs/media/month.jpg" alt="Nova Task's month view"></a>
+**[Open Nova Calendar →](https://nova-calendar.novacane-studio.workers.dev)**
+
+<a href="https://github.com/tuniveza/nova-calendar"><img src="https://raw.githubusercontent.com/tuniveza/nova-calendar/main/docs/media/month.jpg" alt="Nova Calendar's month view"></a>
 
 </td>
 <td width="50%" valign="top">
@@ -100,7 +102,7 @@ flowchart TB
   bot -->|alerts · staff chat| hub["Nova Hub<br/>staff phone app (served by Nova Bot)"]
   bot -->|busy times| club["✦ Nova Club<br/>members' Android app"]
   subgraph tools["Standalone tools"]
-    task["✦ Nova Task"]
+    task["✦ Nova Calendar"]
     notes["✦ Nova Notes"]
     obs["✦ Nova Observatory"]
   end
@@ -127,7 +129,7 @@ git submodule update --remote --merge
 | `nova-bot/` | [tuniveza/nova-bot](https://github.com/tuniveza/nova-bot) | Chat, bookings, Nova Hub back end | `npm install && npm run sandbox` |
 | `nova-agent/` | [tuniveza/nova-agent](https://github.com/tuniveza/nova-agent) | Acuity browser helper | see its README (needs an Acuity login) |
 | `nova-club/` | [tuniveza/nova-club](https://github.com/tuniveza/nova-club) | Members' Android app | open in Android Studio |
-| `nova-task/` | [tuniveza/nova-task](https://github.com/tuniveza/nova-task) | Cosmic calendar | open `index.html` |
+| `nova-calendar/` | [tuniveza/nova-calendar](https://github.com/tuniveza/nova-calendar) | Cosmic calendar (PWA) | [use it online](https://nova-calendar.novacane-studio.workers.dev) or open `index.html` |
 | `nova-notes/` | [tuniveza/nova-notes](https://github.com/tuniveza/nova-notes) | Note editor (PWA) | [use it online](https://nova-notes.novacane-studio.workers.dev) or `python3 -m http.server` |
 | `nova-observatory/` | [tuniveza/nova-observatory](https://github.com/tuniveza/nova-observatory) | Project dashboard | `npm install && npm run scan` |
 
