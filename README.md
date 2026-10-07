@@ -103,6 +103,11 @@ The studio's chat assistant and bookings, the staff and members' apps, and a set
 
 <img src="docs/portal-planets.jpg" alt="48 generated planets: gas giants, ocean, molten, ice and rocky worlds" width="860">
 
+### ✦ The Nova Manual
+**How every Nova app works, on every Nova app.** A book button beside the Portal badge (or press **?** anywhere) opens one panel for the whole suite. For each app it has a **Guide**, **How it's built**, its **History** as a timeline, and **What's new**: the last week's changes and what's being worked on right now. You can search all of it. The manual is made from each project's README and git history (`node scripts/build-manual.mjs` in Nova Portal), so it keeps up as the suite changes.
+
+`Web component` `Shadow DOM` `Generated from READMEs and git`
+
 ## How it fits together
 
 ```mermaid
