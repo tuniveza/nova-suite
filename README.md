@@ -5,7 +5,7 @@
 **Everything that runs Novacane Studios, plus the little universe of tools around it.**<br>
 The studio's chat assistant and bookings, the staff and members' apps, and a set of cosmic tools, in one home.
 
-![Repos](https://img.shields.io/badge/repos-7-B01D68?style=flat-square)
+![Repos](https://img.shields.io/badge/repos-8-B01D68?style=flat-square)
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers%20%2B%20D1-7A1F86?style=flat-square)
 ![Claude](https://img.shields.io/badge/AI-Claude-25194D?style=flat-square)
 ![Android](https://img.shields.io/badge/Android-Kotlin%20%2B%20Compose-FF5FA8?style=flat-square)
@@ -31,11 +31,11 @@ The studio's chat assistant and bookings, the staff and members' apps, and a set
 <td width="50%" valign="top">
 
 ### ✦ [Nova Agent](https://github.com/tuniveza/nova-agent)
-**The hands that work Acuity's admin pages.** A self-healing Playwright browser helper on the studio computer that carries out staff jobs for Nova Bot, remembering where things are and asking Claude when a page changes.
+**The studio computer's chat, planner and hands.** Chat with Claude about the studio, plan Nova Missions and Quests (any length, from one second to forever) with pings that reach Nova Hub's phones, open every suite app inside it, and carry out staff jobs in Acuity's admin pages with a self-healing Playwright helper.
 
-`TypeScript` `Playwright` `Claude` `systemd`
+`TypeScript` `Hono` `Playwright` `Claude` `systemd`
 
-<a href="https://github.com/tuniveza/nova-agent"><img src="https://raw.githubusercontent.com/tuniveza/nova-agent/main/docs/media/visualizer.jpg" alt="Nova Agent's live visualizer"></a>
+<a href="https://github.com/tuniveza/nova-agent"><img src="https://raw.githubusercontent.com/tuniveza/nova-agent/main/docs/media/hero.jpg" alt="Nova Agent: the rail, the chat in the middle and today's plan"></a>
 
 </td>
 </tr>
@@ -94,6 +94,15 @@ The studio's chat assistant and bookings, the staff and members' apps, and a set
 
 `Cloudflare Workers` `D1` `Claude` `PWA`
 
+<a href="https://github.com/tuniveza/nova-index"><img src="https://raw.githubusercontent.com/tuniveza/nova-index/main/docs/media/browse.jpg" alt="Nova Index's Browse screen" width="860"></a>
+
+### ✦ Nova Portal
+**One sign-in for the whole suite, and a planet for everyone.** Sign in once for Nova Hub, Nova Index and the admin pages. Admins invite the crew by link, and each person gets a unique planet drawn from their id: their badge across the suite and the face of their own Nova Index partition.
+
+`Cloudflare Workers` `D1` `PBKDF2` `Generative SVG`
+
+<img src="docs/portal-planets.jpg" alt="48 generated planets: gas giants, ocean, molten, ice and rocky worlds" width="860">
+
 ## How it fits together
 
 ```mermaid
@@ -109,6 +118,8 @@ flowchart TB
   bot <-->|memory: facts in, context out| index["✦ Nova Index<br/>the suite's shared memory"]
   agent <-->|memory| index
   hub -->|browse · edit · approve| index
+  portal["✦ Nova Portal<br/>one sign-in · planets"] -->|session| hub
+  portal -->|session · your partition| index
   subgraph tools["Standalone tools"]
     task["✦ Nova Calendar"]
     notes["✦ Nova Notes"]
@@ -140,7 +151,8 @@ git submodule update --remote --merge
 | `nova-calendar/` | [tuniveza/nova-calendar](https://github.com/tuniveza/nova-calendar) | Cosmic calendar (PWA) | [use it online](https://nova-calendar.novacane-studio.workers.dev) or open `index.html` |
 | `nova-notes/` | [tuniveza/nova-notes](https://github.com/tuniveza/nova-notes) | Note editor (PWA) | [use it online](https://nova-notes.novacane-studio.workers.dev) or `python3 -m http.server` |
 | `nova-observatory/` | [tuniveza/nova-observatory](https://github.com/tuniveza/nova-observatory) | Project dashboard | `npm install && npm run scan` |
-| `nova-index/` | [tuniveza/nova-index](https://github.com/tuniveza/nova-index) | The suite's shared memory (browse, edit, approve) | [use it](https://novacane-worker.novacane-studio.workers.dev/app/memory/) (Nova Hub sign-in) |
+| `nova-index/` | [tuniveza/nova-index](https://github.com/tuniveza/nova-index) | The suite's shared memory (browse, edit, approve) | [use it](https://novacane-worker.novacane-studio.workers.dev/app/memory/) (Nova Portal sign-in) |
+| *(coming)* | tuniveza/nova-portal | One sign-in for the suite, and a planet for everyone | [use it](https://novacane-worker.novacane-studio.workers.dev/portal/) |
 
 Every repo has its own README with screenshots, a demo and set-up notes.
 
